@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     parser.add_argument("-b", "--blocks", type=int, default=2, help="number of blocks mined (positive int)")
     parser.add_argument("-d", "--difficulty", type=int, default=1, help="number of 0s at the beginning of a valid block hash (positive int)")
-    parser.add_argument("-m", "--miner", default="michiel-address", help="address of the miner")
+    parser.add_argument("-m", "--miner", default="calvin-address", help="address of the miner")
     parser.add_argument("-r", "--reward", type=int, default=100, help="reward given to the miner after successfully mining a block (positive int)")
     parser.add_argument("-t", "--transactions", type=int, default=2, help="number of transactions per block (positive int)")
     parser.add_argument("-v", "--verbose", action="store_true", help="print out all transactions")

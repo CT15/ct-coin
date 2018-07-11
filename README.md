@@ -3,6 +3,12 @@
 The code is adapted from Michiel Mulders' [code](https://github.com/michielmulders/blockgeeks-build-blockchain-javascript)
 on building blockchain with JavaScript.
 
+## Mining Reward
+* Initial mining reward value is specified when the blockchain is first created.
+* The genesis block is created at the same time as the creation of the blockchain.
+* No one mines the genesis block.
+* The mining reward is halved for every block mined.
+
 ## Python Version
 Python 3.6.4
 
@@ -22,7 +28,7 @@ Python 3.6.4
     ```shell
     $ deactivate
     ```
-    
+
 ## Available Options
 
 When running `demo.py`, it is possible to specify extra arguments:

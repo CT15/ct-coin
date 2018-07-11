@@ -29,7 +29,10 @@ class Blockchain:
         block = Block(get_timestamp(), self.pending_transactions, self.get_latest_block().hash)
         block.mine_block(self.difficulty)
 
-        print("Block successfully mined!")
+        # Reward is halved for every block mined
+        self.mining_reward = self.mining_reward / 2
+
+        print(f"Block successfully mined! New mining reward is {self.mining_reward}")
         self.chain.append(block)
 
         # in preparation to mine the next block
