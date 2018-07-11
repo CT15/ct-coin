@@ -3,7 +3,7 @@
 The code is adapted from Michiel Mulders' [code](https://github.com/michielmulders/blockgeeks-build-blockchain-javascript)
 on building blockchain with JavaScript.
 
-## Mining Reward
+## About CT Coin
 * Initial mining reward value is specified when the blockchain is first created.
 * The genesis block is created at the same time as the creation of the blockchain.
 * No one mines the genesis block.
