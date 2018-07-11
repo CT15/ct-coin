@@ -5,6 +5,7 @@ from random import randint
 from blockchain import Blockchain
 from transaction import Transaction
 
+
 def generate_transaction():
     from_address = "address" + str(randint(1, 20))
     to_address = "address" + str(randint(1, 20))
