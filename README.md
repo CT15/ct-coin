@@ -34,7 +34,7 @@ Python 3.6.4
 When running `demo.py`, it is possible to specify extra arguments:
 
 * -b/--blocks => number of blocks mined (positive int), default = 2
-* -d/--difficulty => number of 0s at the beginning of a valid block hash (positive int), default = 1
+* -d/--difficulty => number of 0s at the beginning of a valid block hash (positive int <= 64), default = 1
 * -m/--miner => address of the miner, default = "calvin-address"
 * -r/--reward => reward given to the miner after successfully mining a block (positive int), default = 100
 * -t/--transactions => number of transactions per block (positive int), default = 2

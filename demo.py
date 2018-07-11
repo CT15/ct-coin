@@ -1,5 +1,4 @@
 import argparse
-import sys
 from random import randint
 
 from blockchain import Blockchain
@@ -40,15 +39,23 @@ def validate_positive(value):
     if value <= 0:
         msg = f"{value} is not a positive integer"
         raise argparse.ArgumentTypeError(msg)
-    print(1)
     return value
+
+
+def validate_args(args):
+    for arg in [args.blocks, args.difficulty, args.reward, args.transactions]:
+        if arg: validate_positive(arg)
+
+    if args.difficulty > 64:
+        msg = "difficulty value should not exceed 64"
+        raise argparse.ArgumentTypeError(msg)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Options for blockchain demo")
 
     parser.add_argument("-b", "--blocks", type=int, default=2, help="number of blocks mined (positive int)")
-    parser.add_argument("-d", "--difficulty", type=int, default=1, help="number of 0s at the beginning of a valid block hash (positive int)")
+    parser.add_argument("-d", "--difficulty", type=int, default=1, help="number of 0s at the beginning of a valid block hash (positive int <= 64)")
     parser.add_argument("-m", "--miner", default="calvin-address", help="address of the miner")
     parser.add_argument("-r", "--reward", type=int, default=100, help="reward given to the miner after successfully mining a block (positive int)")
     parser.add_argument("-t", "--transactions", type=int, default=2, help="number of transactions per block (positive int)")
@@ -56,7 +63,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    for arg in [args.blocks, args.difficulty, args.reward, args.transactions]:
-        if arg: validate_positive(arg)
-
+    validate_args(args)
     execute(args)
