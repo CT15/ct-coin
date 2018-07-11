@@ -40,7 +40,7 @@ def validate_positive(value):
     if value <= 0:
         msg = f"{value} is not a positive integer"
         raise argparse.ArgumentTypeError(msg)
-
+    print(1)
     return value
 
 
@@ -56,5 +56,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    validate_positive(args.blocks)
+    for arg in [args.blocks, args.difficulty, args.reward, args.transactions]:
+        if arg: validate_positive(arg)
+
     execute(args)
